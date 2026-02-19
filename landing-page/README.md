@@ -43,6 +43,9 @@ A responsive, multi-section landing page for a digital marketing platform built 
 ---
 
 ## Project Structure
+
+
+```
 src/
 ├─ assets/             #   icons
 ├─ components/
@@ -61,6 +64,8 @@ index.html
 tailwind.config.js     
 vit.config.js
 
+```
+
 
 ## Installation
 
@@ -73,7 +78,9 @@ cd landing-page
 2.  Dependency Installation
 ```bash
 npm install
-```bash
+```
+
+
 
 3. Start the Development
 ```bash

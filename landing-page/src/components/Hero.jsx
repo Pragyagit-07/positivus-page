@@ -3,7 +3,7 @@ import amazon from "../assets/amazon-logo.png";
 import dribble from "../assets/dribble.png";
 import notion from "../assets/notion.png";
 import hubspot from "../assets/Hubspot-logo.png";
-import netflix from "../assets/Netflix.png";
+import netflix from "../assets/netflix.png";
 import zoom from "../assets/zoom.png";
 
 const Hero = () => {

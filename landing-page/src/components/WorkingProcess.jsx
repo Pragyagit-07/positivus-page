@@ -1,85 +1,161 @@
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
-
-const steps = [
-  {
-    id: 1,
-    title: "Consultation",
-    desc: "We start by understanding your needs and goals, providing tailored advice and a clear roadmap for your project."
-  },
-  {
-    id: 2,
-    title: "Research & Strategy Development",
-    desc: "We analyze your industry, competitors, and audience to develop a data-driven strategy for success."
-  },
-  {
-    id: 3,
-    title: "Design & Implementation",
-    desc: "Our team designs and implements solutions, ensuring usability, functionality, and alignment with your objectives."
-  },
-  {
-    id: 4,
-    title: "Testing & Launch",
-    desc: "We rigorously test our solutions, refine based on feedback, and launch a polished final product."
-  },
-];
 
 const WorkingProcess = () => {
-  const [openStep, setOpenStep] = useState(null);
+  const [open, setOpen] = useState(1);
 
-  const toggleStep = (id) => setOpenStep(openStep === id ? null : id);
+  const toggle = (num) => {
+    setOpen(open === num ? null : num);
+  };
 
   return (
-    <section id="working-process" className="bg-light py-16 sm:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        {/* Section Heading */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark">
-            Our Working Process
+    <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="max-w-6xl">
+
+        {/* Heading */}
+        <div className="flex flex-col lg:flex-row lg:items-center gap-6 mb-12">
+          <h2 className="text-3xl font-semibold">
+            <span className="bg-lime-400 px-4 py-1 rounded-md">
+              Our Working Process
+            </span>
           </h2>
-          <p className="mt-4 text-muted text-sm sm:text-base max-w-xl mx-auto">
-            Step by step approach to ensure quality and success in every project.
+
+          <p className="text-gray-600 max-w-2xl text-lg">
+            Step-by-Step Guide to Achieving Your Business Goals
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="space-y-4 sm:space-y-6">
-          {steps.map((step) => {
-            const isOpen = openStep === step.id;
-            return (
-              <div
-                key={step.id}
-                className={`border-t-2 rounded-tr-2xl overflow-hidden transition-all duration-300 cursor-pointer
-                  ${isOpen ? "border-primary" : "border-black/20"}
-                `}
-                onClick={() => toggleStep(step.id)}
-              >
-                {/* Header */}
-                <div className={`flex justify-between items-center p-4 sm:p-6 md:p-8
-                  ${isOpen ? "bg-primary/10" : "bg-white"} transition-colors duration-300`}
-                >
-                  <h3 className="font-semibold text-base sm:text-lg md:text-xl text-dark">
-                    {step.id.toString().padStart(2, "0")} {step.title}
-                  </h3>
-                  {isOpen ? <Minus size={20} className="text-dark" /> : <Plus size={20} className="text-dark" />}
-                </div>
+        <div className="space-y-6">
 
-                {/* Divider */}
-                {isOpen && <div className="h-[2px] w-full bg-primary transition-all duration-300"></div>}
-
-                {/* Description */}
-                <div
-                  className={`overflow-hidden transition-all duration-500
-                    ${isOpen ? "max-h-96 p-4 sm:p-6 md:p-8 bg-primary/20" : "max-h-0"}
-                  `}
-                >
-                  <p className="text-sm sm:text-base md:text-lg text-dark">
-                    {step.desc}
-                  </p>
-                </div>
+          {/* ITEM 1 */}
+          <div
+            className={`rounded-[32px] border border-black shadow-[0_8px_0_0_#000] overflow-hidden transition-all duration-300 ${
+              open === 1 ? "bg-lime-300" : "bg-white"
+            }`}
+          >
+            <button
+              onClick={() => toggle(1)}
+              className="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div className="flex items-center gap-6 flex-1">
+                <span className="text-3xl font-bold">01</span>
+                <span className="text-2xl font-bold">Consultation</span>
               </div>
-            );
-          })}
+
+              <div className="w-12 h-12 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center text-2xl font-bold">
+                {open === 1 ? "−" : "+"}
+              </div>
+            </button>
+
+            {open === 1 && (
+              <div className="px-6 pb-6 pt-2 border-t border-black">
+                <p className="leading-relaxed text-gray-800">
+                  During the initial consultation, we will discuss your
+                  business goals and objectives, target audience, and current
+                  marketing efforts. This allows us to understand your needs
+                  and tailor our services to best fit your requirements.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* ITEM 2 */}
+          <div
+            className={`rounded-[32px] border border-black shadow-[0_8px_0_0_#000] overflow-hidden transition-all duration-300 ${
+              open === 2 ? "bg-lime-300" : "bg-white"
+            }`}
+          >
+            <button
+              onClick={() => toggle(2)}
+              className="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div className="flex items-center gap-6 flex-1">
+                <span className="text-3xl font-bold">02</span>
+                <span className="text-2xl font-bold">
+                  Research and Strategy Development
+                </span>
+              </div>
+
+              <div className="w-12 h-12 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center text-2xl font-bold">
+                {open === 2 ? "−" : "+"}
+              </div>
+            </button>
+
+            {open === 2 && (
+              <div className="px-6 pb-6 pt-2 border-t border-black">
+                <p className="leading-relaxed text-gray-800">
+                  We conduct in-depth research about your industry,
+                  competitors, and target audience. Based on insights, we
+                  create a customized digital marketing strategy aligned with
+                  your business objectives.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* ITEM 3 */}
+          <div
+            className={`rounded-[32px] border border-black shadow-[0_8px_0_0_#000] overflow-hidden transition-all duration-300 ${
+              open === 3 ? "bg-lime-300" : "bg-white"
+            }`}
+          >
+            <button
+              onClick={() => toggle(3)}
+              className="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div className="flex items-center gap-6 flex-1">
+                <span className="text-3xl font-bold">03</span>
+                <span className="text-2xl font-bold">Implementation</span>
+              </div>
+
+              <div className="w-12 h-12 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center text-2xl font-bold">
+                {open === 3 ? "−" : "+"}
+              </div>
+            </button>
+
+            {open === 3 && (
+              <div className="px-6 pb-6 pt-2 border-t border-black">
+                <p className="leading-relaxed text-gray-800">
+                  Our team executes the strategy using SEO, PPC, social media,
+                  and content marketing techniques. We ensure all campaigns are
+                  properly launched and optimized from day one.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* ITEM 4 */}
+          <div
+            className={`rounded-[32px] border border-black shadow-[0_8px_0_0_#000] overflow-hidden transition-all duration-300 ${
+              open === 4 ? "bg-lime-300" : "bg-white"
+            }`}
+          >
+            <button
+              onClick={() => toggle(4)}
+              className="w-full p-6 flex items-center justify-between text-left"
+            >
+              <div className="flex items-center gap-6 flex-1">
+                <span className="text-3xl font-bold">04</span>
+                <span className="text-2xl font-bold">
+                  Monitoring and Optimization
+                </span>
+              </div>
+
+              <div className="w-12 h-12 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center text-2xl font-bold">
+                {open === 4 ? "−" : "+"}
+              </div>
+            </button>
+
+            {open === 4 && (
+              <div className="px-6 pb-6 pt-2 border-t border-black">
+                <p className="leading-relaxed text-gray-800">
+                  We continuously track performance metrics and analyze data.
+                  Based on insights, we optimize campaigns to maximize ROI and
+                  ensure long-term business growth.
+                </p>
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
     </section>

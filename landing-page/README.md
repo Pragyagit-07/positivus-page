@@ -1,6 +1,6 @@
-# Positivious Landing Page
+# Positivus Landing Page
 
-A responsive, multi-section landing page for a digital marketing platform built with **React**, **Tailwind CSS**, and **Vite**. The page includes a Hero section, Services, Case Studies, Working Process, Testimonials, Brands, and a Contact form.
+A responsive, multi-section landing page for a digital marketing platform built with **React**, **Tailwind CSS**, and **Vite**. The page includes a Hero section, Services, Let make things, Case Studies, Working Process, Testimonials, Team, and a Contact form , Footer.
 
 ---
 
@@ -22,13 +22,15 @@ A responsive, multi-section landing page for a digital marketing platform built 
 
 - Fully responsive landing page  
 - Hero section with call-to-action button  
-- Brands carousel with animation  
-- Services section with hover effects  
+- Services section
+- Let Make things working
 - Case Studies section  
-- Working Process accordion with toggle icons  
+- Working Process 
+- About Teams Overview
 - Testimonials section  
 - Contact form with validation and alert on submit  
-- Smooth scrolling for anchor links  
+- Footer
+- Smooth scrolling
 
 ---
 
@@ -51,12 +53,14 @@ src/
 ├─ components/
 │  ├─ Navbar.jsx
 │  ├─ Hero.jsx
-│  ├─ Brands.jsx
 │  ├─ Services.jsx
+│  ├─ LetMakeThings.jsx
 │  ├─ CaseStudies.jsx
 │  ├─ WorkingProcess.jsx
+|  |- Team.jsx
 │  ├─ Testimonials.jsx
-│  └─ Contact.jsx
+|  |- Contact.jsx
+│  └─ Footer.jsx
 ├─ App.jsx            
 ├─ index.css           
 └─ main.jsx           
@@ -71,7 +75,7 @@ vit.config.js
 
 1. clone the repository
 ```bash
-git clone landing-page
+git clone positivus-page
 cd landing-page
 ```
 

@@ -1,65 +1,35 @@
-import { useState } from "react";
+import logo from "../assets/black-positivus-logo.jpg";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav className="w-full bg-light py-4 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+    <div className="sticky top-0 z-50 bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-        <h1 className="text-4xl md:text-5xl font-bold text-dark">
-          Positivious
-        </h1>
-        
+        {/* Logo */}
+        <a href="/" className="flex items-center gap-2 font-bold text-xl">
+          <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
+            <img src={logo} alt="logo" />
+          </div>
+          <span>Positivus</span>
+        </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-muted font-medium text-lg">
-          <a href="#contact" className="hover:text-primary">Contact Us</a>
-          <a href="#case" className="hover:text-primary">Case Studies</a>
-          <a href="#services" className="hover:text-primary">Services</a>
-          <a href="#test" className="hover:text-primary">Testimoinal</a>
+        {/* Menu */}
+        <div className="flex justify-between items-center">
+          <div className="hidden md:flex items-center gap-8 mr-3">
+            <a href="#" className="text-sm hover:text-black p-1 transition-colors">About us</a>
+            <a href="#" className="text-sm hover:text-black p-1 transition-colors">Services</a>
+            <a href="#" className="text-sm hover:text-black p-1 transition-colors">Use Cases</a>
+            <a href="#" className="text-sm hover:text-black p-1 transition-colors">Pricing</a>
+            <a href="#" className="text-sm hover:text-black p-1 transition-colors">Blog</a>
+          </div>
 
-        
+          <button className="h-9 rounded-xl border-2 border-zinc-700 px-6 py-2 text-sm bg-white hover:bg-gray-50 transition">
+            Request a quote
+          </button>
         </div>
 
-        {/* Desktop Button */}
-        
-        <a
-        href="#contact"
-        className="hidden md:block bg-primary text-white px-6 py-2 
-                  rounded-2xl shadow hover:bg-accent transition"
-        >
-        Request Quote
-      </a>
-
-
-        {/* Mobile Button */}
-        <button
-          className="md:hidden text-2xl"
-          onClick={() => setOpen(!open)}
-        >
-          ☰
-        </button>
       </div>
-
-      {open && (
-        <div className="md:hidden bg-white px-6 py-4 space-y-4 shadow-md">
-          <a href="#contact" className="block text-muted">Contact Us</a>
-          <a href="#case" className="block text-muted">Case Studies</a>
-          <a href="#services" className="block text-muted">Services</a>
-          <a href="#test" className="block text-muted">Testimonial</a>
-
-          
-          
-         <a
-         href="#contact"
-         className="block bg-primary text-white py-2 rounded-xl text-center"
-          >
-         Request Quote
-         </a>
-         </div>
-      )}
-    </nav>
+    </div>
   );
 };
 

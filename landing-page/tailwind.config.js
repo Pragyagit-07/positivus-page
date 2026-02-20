@@ -7,13 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-                primary: "#5B21B6",   
-                accent: "#FB7185",   
-                dark: "#111827",
-                light: "#F9FAFB",
-                 muted: "#6B7280",
+                     primary: "#B9FF66",
+                      dark: "#191A23",
+                     light: "hsl(0, 0%, 100%)",
+                      muted: "#6B7280",
       },
-    },
+       },
   },
   plugins: [],
-}
+};

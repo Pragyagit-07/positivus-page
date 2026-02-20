@@ -1,61 +1,52 @@
-const caseStudies = [
-  {
-    title: "Boosting Online Sales for E-commerce Brand",
-    desc: "We increased online sales by 70% through targeted SEO and paid ad strategies.",
-  },
-  {
-    title: "Scaling a SaaS Startup",
-    desc: "Generated 3x more qualified leads using data-driven marketing campaigns.",
-  },
-];
-
 const CaseStudies = () => {
   return (
-    <section  id="case" className="bg-light py-20 text-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 
-        {/* Heading */}
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-6 mb-12">
+        <h2 className="text-3xl font-semibold">
+          <span className="bg-lime-400 px-4 py-1 rounded-md">
             Case Studies
-          </h2>
-          <p className="mt-6 text-muted">
-            Real examples of how we helped businesses grow and succeed.
-          </p>
-        </div>
+          </span>
+        </h2>
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {caseStudies.map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-white p-6 sm:p-8 rounded-3xl border border-transparent shadow-md hover:shadow-2xl hover:-translate-y-3 hover:border-primary transition-all duration-300 overflow-hidden group"
-              >
-              {/* left animated*/}
-               <div className="absolute left-0 top-0 h-full w-1 bg-primary opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-
-              <h3 className="text-xl font-semibold">
-                {item.title}
-              </h3>
-
-              <p className="mt-4 text-muted">
-                {item.desc}
-              </p>
-
-              <a
-                href="#contact"
-              
-          className="mt-6 inline-block text-primary font-medium group-hover:text-accent transition"
-
-              >
-                Learn more →
-              </a>
-            </div>
-            
-          ))}
-        </div>
-
+        <p className="text-gray-600 max-w-2xl text-lg">
+          Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies
+        </p>
       </div>
+
+      <div className="bg-black text-white rounded-[40px] p-12">
+        <div className="grid md:grid-cols-3 gap-12">
+
+          <div>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.
+            </p>
+            <a href="#" className="text-lime-400 font-medium">
+              Learn more ↗
+            </a>
+          </div>
+
+          <div className="border-t border-gray-700 pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-12">
+            <p className="text-gray-300 leading-relaxed mb-6">
+              For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.
+            </p>
+            <a href="#" className="text-lime-400 font-medium">
+              Learn more ↗
+            </a>
+          </div>
+
+          <div className="border-t border-gray-700 pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-12">
+            <p className="text-gray-300 leading-relaxed mb-6">
+              For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.
+            </p>
+            <a href="#" className="text-lime-400 font-medium">
+              Learn more ↗
+            </a>
+          </div>
+
+        </div>
+      </div>
+
     </section>
   );
 };

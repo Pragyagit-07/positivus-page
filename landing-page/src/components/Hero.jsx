@@ -1,40 +1,67 @@
-import pic from "../assets/announcement.png";
+import hero from "../assets/Hero-section.png";
+import amazon from "../assets/amazon-logo.png";
+import dribble from "../assets/dribble.png";
+import notion from "../assets/Notion.png";
+import hubspot from "../assets/Hubspot-logo.png";
+import netflix from "../assets/Netflix.png";
+import zoom from "../assets/zoom.png";
+
 const Hero = () => {
   return (
+    <section className=" py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 
-<section className="bg-light py-16 sm:py-28">
-  <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
 
-    {/* Text */}
-    <div className="flex-1">
-      <h1 className="text-4xl md:text-6xl font-bold text-dark leading-tight">
-        Navigating the digital landscape for success
-      </h1>
-      <p className="mt-6 text-lg text-muted leading-relaxed">
-        We help brands grow with powerful digital marketing strategies.
-      </p>
-      <a
-        href="#contact"
-        className="mt-8 inline-block bg-primary text-white px-8 py-4 rounded-2xl shadow-xl hover:bg-accent hover:scale-105 transition duration-300"
+        {/* Left Content */}
+        <div>
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-black">
+            Navigating the digital landscape for success
+          </h1>
+
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            Our digital marketing agency helps businesses grow and succeed online
+            through a range of services including SEO, PPC, social media marketing,
+            and content creation.
+          </p>
+
+          <button
+           className="inline-flex items-center justify-center gap-2 whitespace-nowrap 
+             text-sm font-medium transition-all 
+            h-12 rounded-lg px-6
+            bg-black text-white hover:opacity-90 
+            disabled:pointer-events-none disabled:opacity-50 
+             outline-none"
       >
-        Book a Consultation
-      </a>
-    </div>
+         Book a consultation
+         </button>
+        </div>
 
-    {/* Image */}
-    <div className="flex-1 flex justify-center">
-      <img
-        src={pic}
-        alt="Digital pic"
-        className="w-full max-w-md md:max-w-lg h-auto object-contain"
-      />
-    </div>
+        {/* Right Image */}
+        <div className="relative h-96 md:h-full flex items-center justify-center">
+          <img
+            src={hero}
+            alt="hero"
+            className="w-full max-w-lg"
+          />
+        </div>
 
-  </div>
-</section>
+      </div>
 
+      {/* Brand Logos */}
+      <div className="mt-20 pt-12 border-t border-gray-200">
+        <div className="grid grid-cols-3 md:grid-cols-7 gap-8 items-center justify-center">
+          <img src={amazon} alt="amazon" />
+          <img src={dribble} alt="dribble" />
+          <img src={notion} alt="notion" />
+          <img src={hubspot} alt="hubspot" />
+          <img src={netflix} alt="netflix" />
+          <img src={amazon} alt="amazon2" />
+          <img src={zoom} alt="zoom" />
+        </div>
+      </div>
+
+    </section>
   );
 };
-export default Hero;
 
-   
+export default Hero;
